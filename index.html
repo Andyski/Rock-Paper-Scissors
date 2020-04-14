@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Function scope example</title>
+</head>
+<body>
+    <p1>Rock, Paper, Scissors! Type game() in console and press enter to play. Refresh if you want to go another round! Good Luck</p1>
+  <script>
+
+    let playerScore = 0;
+    let computerScore = 0;
+
+      function computerPlay(){
+        let choices = ['ROCK','PAPER','SCISSORS'];
+        valueToUse = choices[Math.floor(Math.random() * choices.length)];
+        return valueToUse;
+      }
+
+      function playRound(playerSelection, computerSelection){
+        if(playerSelection.toUpperCase() == 'ROCK' && computerSelection == 'SCISSORS'){
+          console.log(" Rock beats Scissors, you win!");
+          playerScore++;
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'ROCK' && computerSelection == 'PAPER') {
+          console.log(" Paper beats rock, you lose!");
+          computerScore++;
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'ROCK' && computerSelection == 'ROCK'){
+          console.log(" Rock vs Rock, it's a tie !");
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection == 'ROCK'){
+          console.log(" Paper beats rock, you win!");
+          playerScore++;
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection == 'SCISSORS'){
+          console.log(" Scissors beat paper, you lose!");
+          computerScore++;
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection == 'PAPER'){
+          console.log(" Paper vs Paper, it's a tie !");
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection == 'PAPER') {
+          console.log(" Scissors beat paper, you win!");
+          playerScore++;
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection == 'ROCK'){
+          console.log(" Rock beats Scissors, you lose!");
+          computerScore++;
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+        else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection == 'SCISSORS'){
+          console.log(" Scissors vs Scissors, it's a tie !");
+          return "Player " + playerScore + " vs Computer " + computerScore;
+        }
+      }
+
+function game(){
+  turn = 0;
+    while(turn!=5)
+    {
+      playerSelection = prompt(" Rock, Paper or Scissors? ");
+      computerSelection = computerPlay();
+      console.log(playRound(playerSelection,computerSelection));
+      turn++;
+    }
+
+  if(playerScore > computerScore){
+            console.log(" Player wins! " + playerScore + " vs " + computerScore);
+        }
+        else if(computerScore > playerScore){
+            console.log(" Computer wins! " + computerScore + " vs " + playerScore);
+        }
+        else{
+            console.log(" It's a draw! " + computerScore + " vs " + playerScore);
+        }
+}
+
+
+  </script>
+</body>
+</html>

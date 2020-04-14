@@ -1,0 +1,1 @@
+This is an Odin Web Development course project. The goal is to develop a Rock, Paper, Scissors game to be played in the console. 
