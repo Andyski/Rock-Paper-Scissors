@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Function scope example</title>
+  <link rel='stylesheet' href="index.css">
+</head>
+<body>
+    <div>
+        <h1>Rock, Paper, Scissors! Click the icon to make your choice. Good Luck</h1>
+</div>
+    <div>
+      <div class=icons>
+        <input type="image" id="rock" class="rockIcon" src="Rock-Icon.png" alt='Rock Icon'>
+        <input type="image" id="paper" class="paperIcon" src="Paper-Icon.png" alt='Paper Icon'>
+        <input type="image" id="scissors" class="scissorsIcon" src="Scissor-Icon.png" alt='Scissors Icon'>
+     </div>
+     <div class="score">
+         <p id="p1"></p>
+         <p id="p2"></p>
+         <p id="p3"></p>
+     </div>
+  </div>
+  
+  
+  
+<script>
+
+    let playerScore = 0;   
+    let computerScore = 0;
+    computerSelection = computerPlay();
+
+    document.getElementById("p1").innerHTML = "Computer Score = "+computerScore+"";
+    document.getElementById("p2").innerHTML = "Player Score = "+playerScore+"";
+
+    function computerPlay(){
+        let choices = ['ROCK','PAPER','SCISSORS'];
+        valueToUse = choices[Math.floor(Math.random() * choices.length)];
+        return valueToUse;
+    }
+
+    document.getElementById("rock").addEventListener("click", () => {
+        playRound('ROCK', computerSelection);
+    })
+
+    document.getElementById("paper").addEventListener("click", () => {
+        playRound('PAPER', computerSelection);
+    });
+
+    document.getElementById("scissors").addEventListener("click", () => {
+        playRound('SCISSORS', computerSelection);
+    
+    })
+
+    function playRound(playerSelection, computerSelection){
+        if(playerSelection.toUpperCase() == 'ROCK' && computerSelection == 'SCISSORS'){
+            document.getElementById("p3").innerHTML = "Rock beats Scissors, you win!";
+            playerScore++;
+        }
+        else if (playerSelection.toUpperCase() == 'ROCK' && computerSelection == 'PAPER') {
+            document.getElementById("p3").innerHTML = "Paper beats rock, you lose!";
+            computerScore++;
+        }
+        else if (playerSelection.toUpperCase() == 'ROCK' && computerSelection == 'ROCK'){
+            document.getElementById("p3").innerHTML = "Rock vs Rock, it's a tie !";
+        }
+        else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection == 'ROCK'){
+            document.getElementById("p3").innerHTML = "Paper beats rock, you win!";
+            playerScore++;
+        }
+        else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection == 'SCISSORS'){ 
+            document.getElementById("p3").innerHTML = "Scissors beat paper, you lose!";
+            computerScore++;
+        }
+        else if (playerSelection.toUpperCase() == 'PAPER' && computerSelection == 'PAPER'){
+            document.getElementById("p3").innerHTML = "Paper vs Paper, it's a tie!";
+        }
+        else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection == 'PAPER') {
+            document.getElementById("p3").innerHTML = "Scissors beat paper, you win!";
+            playerScore++;
+        }
+        else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection == 'ROCK'){
+            document.getElementById("p3").innerHTML = "Rock beats Scissors, you lose!";
+            computerScore++;
+        }
+        else if (playerSelection.toUpperCase() == 'SCISSORS' && computerSelection == 'SCISSORS'){
+            document.getElementById("p3").innerHTML = "Scissors vs Scissors, it's a tie!";
+        }
+    }
+
+
+
+  </script>
+</body>
+</html>

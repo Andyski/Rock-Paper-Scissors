@@ -1,1 +1,2 @@
-This is an Odin Web Development course project. The goal is to develop a Rock, Paper, Scissors game to be played in the console. 
+This is an Odin Web Development course project. The goal is to develop a Rock, Paper, Scissors game to be played in the console. Index.hmtl covers this game. 
+The second part of the project is to make the same game functional from the webpage, with buttons and scores updated to the html. 

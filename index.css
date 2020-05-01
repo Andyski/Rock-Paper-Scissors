@@ -1,0 +1,35 @@
+.icons {
+    display: grid;
+    height: 250px;
+    padding-left: 240px;
+    padding-right: 240px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 0px 100px;
+    justify-items: center;
+}
+
+.rockIcon {
+    width: 200x;
+    height: 200px;
+}
+.paperIcon {
+    width: 200x;
+    height: 200px;
+}
+.scissorsIcon {
+    width: 200x;
+    height: 200px;
+}
+
+.paperIcon:hover {
+    transform: scale(1.1);
+}
+
+.rockIcon:hover {
+    transform: scale(1.1);
+}
+
+.scissorsIcon:hover {
+    transform: scale(1.1);
+}
