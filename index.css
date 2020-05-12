@@ -1,35 +1,100 @@
-.icons {
+body {
+    background-attachment: fixed;
+    background-position: left bottom;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+    color: #601155;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #601155;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #601155;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: #601155;
+    font-size: 20px;
+}
+#image1 {
+    background-position: bottom left;
+}
+
+#image2 {
+    background-position: bottom right;
+}
+
+.container {
     display: grid;
-    height: 250px;
-    padding-left: 240px;
-    padding-right: 240px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 0px 100px;
+    width: 600px;
+    padding-left: 335px;
+    padding-right: 335px;
     justify-items: center;
 }
 
-.rockIcon {
-    width: 200x;
-    height: 200px;
+.container1 {
+    justify-items: left;
+    text-align: start;
 }
-.paperIcon {
-    width: 200x;
-    height: 200px;
+
+.container2 {
+    justify-items: right;
+    text-align: end;
 }
-.scissorsIcon {
+
+.playerChoice {
+    display: grid;
+    height: 250px;
+    padding-left: 220px;
+    padding-right: 220px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 0px 50px;
+    justify-items: center;
+}
+
+#rockButton #Rock {
     width: 200x;
     height: 200px;
 }
 
-.paperIcon:hover {
+#paperButton #Paper {
+    width: 200x;
+    height: 200px;
+}
+
+#scissorsButton #Scissors {
+    width: 200x;
+    height: 200px;
+}
+
+#rockButton:hover {
     transform: scale(1.1);
 }
 
-.rockIcon:hover {
+#paperButton:hover {
     transform: scale(1.1);
 }
 
-.scissorsIcon:hover {
+#scissorsButton:hover {
     transform: scale(1.1);
 }
